@@ -1,4 +1,10 @@
 <style>
+
+body {
+	background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 230));
+	background-repeat: no-repeat;
+}
+
 li::first-letter {
 	color: red;
 	font-size: 1.5em;
@@ -39,6 +45,7 @@ butGene.addEventListener('click', function() {
 		let newLi = document.createElement('li');
 		newLi.textContent = randWords[Math.floor((Math.random() * randWords.length))];
 		randWordTag.appendChild(newLi);
+		document.querySelector('body').style.backgroundSize = 'cover';
 	}
 });
 
