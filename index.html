@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+
+	<body>
+		<input type='number' id='num-of-words'></input>
+		<button id='generate'>sugeneruoti atsitiktinius žodžius</button>
+		<ol id ='random-words'>
+			
+		</ol>
+	</body>
+</html>
+
+<script>
+let randWords = ['zuikis', 'katė', 'chalatas', 'sniegas', 'murkia', 'ausys', 'žiurkėnas', 'bitutė', 'vyras', 'širdis',
+'lova', 'obuolys', 'karvė', 'medus', 'sliekas', 'ąžuolas'];
+let butGene = document.getElementById("generate");
+let randWordTag = document.getElementById('random-words');
+let numOfWordsTag = document.getElementById('num-of-words');
+
+butGene.addEventListener('click', function() {
+	for (let i = 0; i < numOfWordsTag.value; i++) {
+		let newLi = document.createElement('li');
+		newLi.textContent = randWords[Math.floor((Math.random() * randWords.length))];
+		randWordTag.appendChild(newLi);
+	}
+});
+
+</script>
