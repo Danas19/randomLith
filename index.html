@@ -1,18 +1,14 @@
 <style>
-
-body {
-	background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 230));
-	background-repeat: no-repeat;
+li {
+        color: black;
 }
 
 li::first-letter {
-	color: red;
 	font-size: 1.5em;
 	text-transform: capitalize;
 }
 
 li {
-	text-shadow: 2px 1px aqua;
 	font-size: 1.5em;
 	letter-spacing: 2px;
 }
@@ -36,7 +32,7 @@ li {
 let randWords = ['sliekas', 'ąžuolas', 'pietūs', 'vadovėlis', 'šaukštas', 'lietus', 'skėtis',
 'kamuolys', 'kriaušė', 'kompiuteris', 'knyga', 'lapas', 'daržovė', 'stalas', 'popierius', 'grybas',
 'kaštonas','obuolys','kuprinė','vagis','statybininkas','morka','arbūzas', 'kėdė', '4','lapė' ,'vilkas',
-'pieštukas', 'sąsiuvinys', 'vinis', 'kirvis', 'plaktukas', 'plyta', 'lapas', 'braškė'];
+'pieštukas', 'sąsiuvinys', 'vinis', 'kirvis', 'plaktukas', 'plyta', 'lapas', 'braškė', 'arbata', 'kava'];
 let butGene = document.getElementById("generate");
 let randWordTag = document.getElementById('random-words');
 let numOfWordsTag = document.getElementById('num-of-words');
@@ -45,8 +41,9 @@ butGene.addEventListener('click', function() {
 	for (let i = 0; i < numOfWordsTag.value; i++) {
 		let newLi = document.createElement('li');
 		newLi.textContent = randWords[Math.floor((Math.random() * randWords.length))];
+                newLi.addEventListener('click', function(){
+                      newLi.style.color = newLi.style.color == 'black' ? 'white' : 'black'});
 		randWordTag.appendChild(newLi);
-		document.querySelector('body').style.backgroundSize = 'cover';
 	}
 });
 
